@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>フルーツゲーム</title>
+<title>フェイスゲーム</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <link rel="icon" href="https://tsukatte.com/wp-content/uploads/2019/01/watermelon-cut-big.png" sizes="16×16" type="image/png" /> 
 <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
@@ -109,7 +109,7 @@ canvas{
  <div id="guide"></div>
  <canvas id="world" width="360" height="520"></canvas>
  <div class="hint">← → / A D / Space / Enter / R<br>
- ヘンカの線：🫥→😶‍🌫→🥱→🥳→🤮→🤬→🤑→🤯→😜→🤪
+ ヘンカの線：🫥→😶‍🌫→🥱→🥳→🤮→🤬→🤔→🤑→🤯→🤪
 </div>
 
  <div id="over" class="over" style="display:none">GAME OVER</div>
@@ -138,6 +138,18 @@ Render.run(Render.create({
 Runner.run(Runner.create(),engine);
 
 /*const fruits=[
+{e:"🫥",r:14,s:10,d:0.001},
+{e:"😶‍🌫",r:18,s:20,d:0.0012},
+{e:"🥱",r:23,s:40,d:0.0015},
+{e:"🥳",r:28,s:80,d:0.0018},
+{e:"🤮",r:33,s:160,d:0.0022},
+{e:"🤬",r:38,s:320,d:0.0026},
+{e:"🤔",r:44,s:640,d:0.003},
+{e:"🤑",r:50,s:960,d:0.0032},
+{e:"🤯",r:56,s:1280,d:0.0035},
+{e:"🤪",r:62,s:1640,d:0.004},   
+];
+const fruits=[
  {e:"🍒",r:12,s:10,d:0.001},
  {e:"🍓",r:16,s:20,d:0.0012},
  {e:"🍇",r:20,s:40,d:0.0015},
@@ -171,9 +183,9 @@ const fruits=[
 {e:"🥳",r:28,s:80,d:0.0018},
 {e:"🤮",r:33,s:160,d:0.0022},
 {e:"🤬",r:38,s:320,d:0.0026},
-{e:"🤑",r:44,s:640,d:0.003},
-{e:"🤯",r:50,s:960,d:0.0032},
-{e:"😜",r:56,s:1280,d:0.0035},
+{e:"🤔",r:44,s:640,d:0.003},
+{e:"🤑",r:50,s:960,d:0.0032},
+{e:"🤯",r:56,s:1280,d:0.0035},
 {e:"🤪",r:62,s:1640,d:0.004},   
 ];
 
