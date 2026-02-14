@@ -403,18 +403,26 @@ Events.on(engine,"collisionStart",e=>{
 
 Events.on(engine,"beforeUpdate",()=>{
  if(gameOver) return;
- const danger=engine.world.bodies
-  .filter(b=>b.fruitType!==undefined && b.position.y<90);
- if(danger.length){
-  overTimer+=engine.timing.delta;
-  if(overTimer>800){
-   gameOver=true;
+
+ const isDanger = engine.world.bodies.some(b=>{
+   if(b.fruitType===undefined) return false;
+
+   // 生成直後は無視（まだ上にあるため）
+   if(b.position.y < 197) return false;
+
+   const top = b.position.y - b.circleRadius;
+   return top < 130;
+ });
+
+ if(isDanger){
+   gameOver = true;
    guide.style.display="none";
    overEl.style.display="flex";
    save();
-  }
- }else overTimer=0;
+ }
 });
+
+
 
 document.getElementById("resetBtn").onclick=fullReset;
 load();
